@@ -1,0 +1,40 @@
+# Node.js / Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+frontend/.env
+frontend/.vercel
+frontend/.turbo
+frontend/out/
+frontend/package-lock.json
+yarn.lock
+
+# Python / Backend
+backend/__pycache__/
+backend/env/
+backend/venv/
+backend/.env
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.ruff_cache/
+backend/.coverage
+backend/db.sqlite3
+backend/instance/
+backend/*.pyc
+backend/*.pyo
+
+# General IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+*.log
+dist/
+build/
+*.iml
+
+# Virtual environment
+venv/
+.env
+.env.local
