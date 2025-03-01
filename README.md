@@ -200,8 +200,8 @@ Vercel Deployment
 
 ## <a name="usage">📬 Contact</a>
 
-- 👨‍💻 Author: Ahmad A. (@engraya)
-- 📧 Email: engrahmadaya@example.com
+- 👨‍💻 Author: Ahmad Yakubu Ahmad (@engraya)
+- 📧 Email: engrahmadaya@gmail.com
 - 🌐 Portfolio: https://engrahmadaya.vercel.app
 
 
