@@ -191,11 +191,11 @@ Special thanks to:
 You can deploy Presenta-AI on platforms like Vercel, Render, AWS Lambda, Firebase Functions, or Heroku.
 
 Vercel Deployment
-Push the project to a GitHub repository.
-Connect your GitHub repo to Vercel.
-Set up the environment variables in Vercel's dashboard for production.
-Deploy the app to Vercel.
-Vercel will automatically build and deploy the app whenever changes are pushed to your main branch.
+- Push the project to a GitHub repository.
+- Connect your GitHub repo to Vercel.
+- Set up the environment variables in Vercel's dashboard for production.
+- Deploy the app to Vercel.
+- Vercel will automatically build and deploy the app whenever changes are pushed to your main branch.
 
 
 ## <a name="usage">📬 Contact</a>
