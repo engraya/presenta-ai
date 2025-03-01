@@ -26,7 +26,7 @@ app = FastAPI()
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Allow Next.js frontend
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -93,21 +93,21 @@ def create_pptx(topic: str, slides_data, layout_preference: str, filename="prese
     prs = Presentation()
 
     # Apply a professional theme
-    prs.slide_master.name = "Ion Boardroom"  # This applies a PowerPoint theme
+    prs.slide_master.name = "Ion Boardroom" 
 
     # Title Slide
-    title_slide_layout = prs.slide_layouts[0]  # Title Slide
+    title_slide_layout = prs.slide_layouts[0]  
     slide = prs.slides.add_slide(title_slide_layout)
     slide.shapes.title.text = topic
 
-    if len(slide.placeholders) > 1:  # Check if subtitle placeholder exists
+    if len(slide.placeholders) > 1:  
         slide.placeholders[1].text = "AI-Generated Presentation"
 
     # Define layout mapping
     layout_mapping = {
-        "Varied": [1, 5, 3, 2, 8],  # Mix of text, image, and two-column layouts
-        "Text-Heavy": [1, 1, 1, 1, 1],  # All text-based slides
-        "Image-Focused": [8, 8, 8, 8, 8],  # All image-based slides
+        "Varied": [1, 5, 3, 2, 8], 
+        "Text-Heavy": [1, 1, 1, 1, 1], 
+        "Image-Focused": [8, 8, 8, 8, 8],  
     }
 
     for i, slide_content in enumerate(slides_data):
@@ -158,7 +158,7 @@ def create_pptx(topic: str, slides_data, layout_preference: str, filename="prese
             height = Inches(3)
             
             slide.shapes.add_textbox(left, top, width, height).text = f"Insert Image: {image_placeholder}"
-            slide.shapes[-1].text_frame.paragraphs[0].font.color.rgb = RGBColor(255, 0, 0)  # Red placeholder text
+            slide.shapes[-1].text_frame.paragraphs[0].font.color.rgb = RGBColor(255, 0, 0) 
 
     # Save file
     prs.save(filename)
