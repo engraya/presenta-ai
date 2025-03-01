@@ -1,44 +1,30 @@
-## <a name="core">TalentMatchAI</a>
+## <a name="core">Presenta-AI</a>
 
-TalentMatchAI is an AI-powered job matching platform that helps job seekers find the most relevant job opportunities based on their skills, experience, and preferences. Leveraging advanced semantic search and machine learning, it ensures a smarter and more efficient job search process..
-
-## 📋 <a name="table">Table of Contents</a>
-
-1. ❤️‍🔥 [Table of Content](#table)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🤸 [Usage](#usage)
-6. 🚀 [Deployment](#more)
-7. 👉 [Contributing](#more)
-
+Presenta-AI is an AI-powered application that generates professional PowerPoint presentations based on user-provided topics. It leverages OpenAI's GPT model and python-pptx to create structured, visually appealing slides with diverse layouts, image placeholders, and professional themes.
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
+🔋 Frontend
 - React.js - Javascript Library for building User Interfaces.
 - Next.js - React framework for server-side rendering, static site generation, and routing.
 - TypeScript - A superset of JavaScript that adds static typing.
 - Tailwind CSS - Utility-first CSS framework for rapidly building custom designs.
-- Zustand - State Management.
+- Axios for API calls
+- React Toastify for notifications
 
+⚙ Backend
+- FastAPI (Python)
+- python-pptx for PowerPoint generation
+- OpenAI API for content generation
+- CORS Middleware for frontend-backend communication
 
 ## <a name="features">🔋 Features</a>
 
-👉 **🔍 AI-Powered Job Matching**: Get job recommendations based on your skills and preferences..
-
-👉 **🎯 Match Score Calculation**: View how well you match a job with a real-time match percentage..
-
-👉 **Customizable Templates**: Choose from a variety of pre-built templates to personalize the content.
-
-👉 **💾 Saved Jobs **:  Save jobs to apply later.
-
-👉 **📝 Easy Applications **: Apply for jobs directly through the platform..
-
-👉 **Dashboard**: Gain insights at a glance with a dynamic dashboard that showcases applied jobs, recent applications, and a job listings.
-
-
-and many more, including the latest **React**, **Next.js** and **Zustand** features alongside code architecture and
-reusability
+- AI-Generated Slide Content: Titles, bullet points, and placeholders for images.
+- Diverse Slide Layouts: Supports varied, text-heavy, and image-focused layouts.
+- Professional PowerPoint Themes: Uses themes like Ion Boardroom for a polished look.
+- Dynamic Image Placeholders: Indicates where images should be inserted.
+- Downloadable PPTX Files: Users can generate and download presentations seamlessly.
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
@@ -49,15 +35,68 @@ Follow these steps to set up the project locally on your machine.
 Make sure you have the following installed on your machine:
 
 - [Git](https://git-scm.com/)
+- [Python 3.x](https://www.python.org/)
 - [Node.js](https://nodejs.org/en)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
+- Virtual environment (venv or conda)
 
   
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/engraya/TalentMatch-AI
-cd talentMatch_AI
+git clone https://github.com/engraya/presenta-ai
+cd presenta-ai
+```
+
+**Project Structure**
+
+```bash
+Presenta-AI/
+│-- backened/          # Backend Directory
+│-- frontent/          # Frontend Directory 
+│-- README.md          # Project documentation
+```
+
+**Backend Setup**
+
+1. Navigate to the backend folder:
+```bash
+cd backend
+```
+2. Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+4. Set up environment variables:
+```bash
+cp .env.example .env  # Then update .env with your OpenAI API key
+```
+5. Run the backend server:
+```bash
+uvicorn main:app --reload
+```
+
+**Frontend Setup**
+1.Navigate to the frontend folder:
+```bash
+cd ../frontend
+```
+2.Install dependencies:
+```bash
+npm install
+```
+3. Start the development server:
+```bash
+npm run dev
+```
+4. Open your browser and go to:
+```bash
+http://localhost:3000
 ```
 
 **Installation**
@@ -66,52 +105,90 @@ Install the project dependencies using npm:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/TalentMatchAI.git
+git clone https://github.com/yourusername/presenta-ai.git
 
 # Navigate into the project
-dc TalentMatchAI
+dc Presenta-AI
 
 # Install dependencies
 npm install   # or yarn install
 ```
 
-**Project Structure**
+📡 API Endpoints
+
+1. Generate PowerPoint Presentation
+
+Endpoint: POST /generate_ppt
+Description: Generates a PowerPoint file based on the given topic.
+
+Request Body:
 
 ```bash
-TalentMatchAI/
-│-- public/          # Static assets
-│-- src/
-│   ├── components/  # Reusable UI components
-│   ├── app/       # Application pages
-│   ├── store/       # Zustand store for state management
-│   ├── data/       # Custom data
-│   ├── config/     # Configuration files (utils, API calls, etc.)
-│   ├── lib/        # Configuration files (fucntions.)
-│-- styles/         # Global styles (Tailwind CSS)
-│-- package.json     # Project dependencies
-│-- README.md        # Project documentation
+{
+  "topic": "Future of AI in Education",
+  "num_slides": 5,
+  "layout_preference": "Varied"
+}
 ```
-
-
-**Running the Project**
-
+Response:
 ```bash
-npm run dev
+{
+  "message": "Presentation is being generated.",
+  "filename": "Future_of_AI_in_Education.pptx"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+2. Download PowerPoint File
+
+Endpoint: GET /download_ppt/{filename}
+Description: Retrieves the generated PowerPoint file.
+
+Example Request:
+```bash
+ GET /download_ppt/Future_of_AI_in_Education.pptx
+```
+Response: Downloads the .pptx file.
 
 
-## <a name="usage">⚙️ Usage</a>
+## <a name="usage">🎨 How it Works</a>
 
-- Clone & Run - Clone or fork in to your dev environemnt.
-- Build Your Profile - Add skills, experience, and preferences.
-- Search & Apply - Use AI-powered job recommendations and apply instantly.
-- Track Applications - Monitor application status and match scores on the dashboard.
+1.The user enters a topic and selects the number of slides.
+2. OpenAI's API generates slide titles and bullet points.
+3. python-pptx formats the slides using a professional PowerPoint theme.
+4. The system creates varied layouts including image placeholders.
+5. The user can download the .pptx file from the frontend.
 
 
-**Deployment**
-You can deploy TalentMatch_AI on platforms like Vercel or Heroku.
+## <a name="usage">🔥 Future Enhancements</a>
+
+- Automatic Image Insertion using AI-generated visuals.
+- User Authentication for personalized presentation storage.
+- Editable Slides UI before downloading.
+- Multi-language Support for diverse users.
+
+  
+
+## <a name="usage">🤝 Contributing</a>
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch: git checkout -b feature-branch
+3. Commit changes: git commit -m "Added new feature"
+4. Push to GitHub: git push origin feature-branch
+5. Open a Pull Request.
+
+
+## <a name="usage">🙌 Acknowledgments</a>
+
+Special thanks to:
+- OpenAI for the AI content generation.
+- python-pptx for PowerPoint automation.
+- The React & FastAPI communities for their amazing tools!
+
+
+## <a name="usage">🌐 Deployment</a>
+You can deploy Presenta-AI on platforms like Vercel, Render, AWS Lambda, Firebase Functions, or Heroku.
 
 Vercel Deployment
 Push the project to a GitHub repository.
@@ -121,12 +198,10 @@ Deploy the app to Vercel.
 Vercel will automatically build and deploy the app whenever changes are pushed to your main branch.
 
 
-**Contributing**
-We welcome contributions to TalentMatch_AI! If you'd like to contribute:
+## <a name="usage">📬 Contact</a>
 
-- Fork the repository.
-- Create a new branch (git checkout -b feature/your-feature).
-- Make your changes.
-- Commit your changes (git commit -am 'Add new feature').
-- Push to the branch (git push origin feature/your-feature).
-- Open a pull request.
+👨‍💻 Author: Ahmad A. (@engraya)
+📧 Email: engrahmadaya@example.com
+🌐 Portfolio: https://engrahmadaya.vercel.app
+
+
