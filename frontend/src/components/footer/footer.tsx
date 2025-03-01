@@ -22,7 +22,7 @@ const Footer = () => {
           )}
         >
           <Link
-            href=""
+            href="https://github.com/engraya/presenta-ai"
             target='_blank'
             className={cn(
               'font-semibold',

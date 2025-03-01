@@ -52,7 +52,7 @@ const Hero = async () => {
           Generate Your Presentation
           </Link>
           <Link
-            href=""
+            href="https://github.com/engraya/presenta-ai"
             className={cn(buttonVariants({ variant: 'outline' }), 'gap-x-2')}
             target="_blank"
             rel="noopener noreferrer"
