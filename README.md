@@ -200,8 +200,8 @@ Vercel will automatically build and deploy the app whenever changes are pushed t
 
 ## <a name="usage">📬 Contact</a>
 
-👨‍💻 Author: Ahmad A. (@engraya)
-📧 Email: engrahmadaya@example.com
-🌐 Portfolio: https://engrahmadaya.vercel.app
+- 👨‍💻 Author: Ahmad A. (@engraya)
+- 📧 Email: engrahmadaya@example.com
+- 🌐 Portfolio: https://engrahmadaya.vercel.app
 
 
