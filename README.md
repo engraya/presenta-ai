@@ -127,7 +127,7 @@ Request Body:
 
 ```bash
 {
-  "topic": "Future of AI in Education",
+  "topic": "Machine Learning",
   "num_slides": 5,
   "layout_preference": "Varied"
 }
@@ -135,7 +135,7 @@ Request Body:
 Response:
 ```bash
 {
-  "message": "Presentation is being generated.",
+  "message": "Presentation generated successfully!",
   "filename": "Future_of_AI_in_Education.pptx"
 }
 ```
@@ -168,7 +168,6 @@ Response: Downloads the .pptx file.
 - Editable Slides UI before downloading.
 - Multi-language Support for diverse users.
 
-  
 
 ## <a name="usage">🤝 Contributing</a>
 
@@ -186,18 +185,11 @@ Contributions are welcome! To contribute:
 Special thanks to:
 - OpenAI for the AI content generation.
 - python-pptx for PowerPoint automation.
-- The React & FastAPI communities for their amazing tools!
+- The React, Nextjs, Typescript, TailwindCSS & FastAPI communities for their amazing tools!
 
 
 ## <a name="usage">🌐 Deployment</a>
 You can deploy Presenta-AI on platforms like Vercel, Render, AWS Lambda, Firebase Functions, or Heroku.
-
-Vercel Deployment
-- Push the project to a GitHub repository.
-- Connect your GitHub repo to Vercel.
-- Set up the environment variables in Vercel's dashboard for production.
-- Deploy the app to Vercel.
-- Vercel will automatically build and deploy the app whenever changes are pushed to your main branch.
 
 
 ## <a name="usage">📬 Contact</a>
