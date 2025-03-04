@@ -53,9 +53,13 @@ function PresentationForm({
               id="numSlides"
               type="number"
               min="1"
+              max="20" // ✅ Enforce max 20
               placeholder="Enter slides count"
               value={numSlides}
-              onChange={(e) => setNumSlides(Number(e.target.value))}
+              onChange={(e) => {
+                const value = Math.min(20, Math.max(1, Number(e.target.value)));
+                setNumSlides(value);
+              }}
               required
             />
           </div>
