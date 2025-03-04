@@ -78,13 +78,9 @@ pip install -r requirements.txt
 cp .env.example .env  # Then update .env with your OpenAI API key
 ```
 5. Run the backend server:
-   - If main.py is inside backend/src/, run:
+  - main.py is inside backend/src/, run:
 ```bash
 uvicorn src.main:app --port 8080 --reload
-```
-   - If main.py is directly in backend/, run:
-```bash
-uvicorn main:app --port 8080 --reload
 ```
 
 **Frontend Setup**
