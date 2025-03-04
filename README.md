@@ -52,9 +52,10 @@ cd presenta-ai
 
 ```bash
 Presenta-AI/
-│-- backened/          # Backend Directory
-│-- frontent/          # Frontend Directory 
-│-- README.md          # Project documentation
+│-- backend/          # Backend Directory
+│-- frontend/         # Frontend Directory 
+│-- README.md         # Project documentation
+│-- backend/requirements.txt  # Backend dependencies
 ```
 
 **Backend Setup**
@@ -77,8 +78,13 @@ pip install -r requirements.txt
 cp .env.example .env  # Then update .env with your OpenAI API key
 ```
 5. Run the backend server:
+   - If main.py is inside backend/src/, run:
 ```bash
-uvicorn main:app --reload
+uvicorn src.main:app --port 8080 --reload
+```
+   - If main.py is directly in backend/, run:
+```bash
+uvicorn main:app --port 8080 --reload
 ```
 
 **Frontend Setup**
