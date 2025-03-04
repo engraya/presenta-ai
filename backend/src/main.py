@@ -1,5 +1,5 @@
 from fastapi import FastAPI, BackgroundTasks
-from pydantic import BaseModel
+from pydantic import BaseModel, Field 
 from typing import Optional
 from openai import OpenAI
 import os
@@ -35,13 +35,12 @@ app.add_middleware(
 )
 
 
-# Request model
+
 class PPTRequest(BaseModel):
     topic: str
-    num_slides: Optional[int] = 5
+    num_slides: Optional[int] = Field(5, ge=1, le=20)
     layout_preference: Optional[str] = "Varied"
 
-# Generate slide content using AI
 def generate_slide_content(topic: str, num_slides: int):
     prompt = f"""
     Generate content for a {num_slides}-slide PowerPoint presentation about "{topic}".
@@ -49,6 +48,9 @@ def generate_slide_content(topic: str, num_slides: int):
     - A clear slide title
     - 3-5 key bullet points explaining the topic
     - If relevant, suggest an image placeholder with a description (e.g., "Insert Image: Growth of AI in Healthcare").
+    
+    Ensure the content is evenly distributed across {num_slides} slides.
+
     Format the response as:
     
     Slide 1:
@@ -64,6 +66,8 @@ def generate_slide_content(topic: str, num_slides: int):
     - [Bullet Point 2]
     - [Bullet Point 3]
     Image: [Optional Image Placeholder]
+
+    (Continue this format for all {num_slides} slides)
     """
 
     response = client.chat.completions.create(

@@ -24,7 +24,6 @@ backend/*.pyc
 backend/*.pyo
 
 # General IDE and OS files
-.vscode/
 .idea/
 .DS_Store
 *.swp
@@ -36,5 +35,8 @@ build/
 
 # Virtual environment
 venv/
-.env
-.env.local
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat
+node_modules
