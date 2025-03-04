@@ -29,10 +29,10 @@ function GeneratePage() {
   }, [pptFile]);
     // Handler for "Generate Again"
     const handleGenerateAgain = () => {
-      setPptFile(""); // Reset file
-      setIsFileReady(false); // Hide Generated component
-      setTopic(""); // Clear topic input
-      setNumSlides(5); // Reset slides count
+      setPptFile("");
+      setIsFileReady(false);
+      setTopic(""); 
+      setNumSlides(5); 
     };
 
   const handleGeneratePPT = async () => {
@@ -49,9 +49,27 @@ function GeneratePage() {
       } else {
         console.error("No filename in API response", response);
       }
-      toast.success(response.data.message || "Presentation is being generated 🎉");
+      toast.success(response.data.message || "Presentation generated successfully! 🎉", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light"
+        });
     } catch (error) {
-      toast.error("Failed to Generate Presentation. Please try again! 😞");
+      toast.error("Failed to Generate Presentation. Please try again! 😞", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light"
+        });
       console.error("Error generating PPT:", error);
     }
     setLoading(false);
@@ -64,7 +82,16 @@ function GeneratePage() {
         const response = await apiFetcher.head(`/download_ppt/${filename}`);
         if (response.status === 200) {
           setIsFileReady(true);
-          toast.success("Presentation is ready for download! 🎉");
+          toast.success("Presentation downloaded successfully! 🎉", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"
+            });
           clearInterval(interval);
         }
       } catch (error) {
@@ -90,9 +117,27 @@ function GeneratePage() {
       document.body.appendChild(link);
       link.click();
       link.remove();
-      toast.success("Presentation Downloaded Successfully! 🎉");
+      toast.success("Presentation Downloaded Successfully! 🎉", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light"
+        });
     } catch (error) {
-      toast.error("Failed to Download the Presentation 😞");
+      toast.error("Failed to Download the Presentation 😞", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light"
+        });
       console.error("Error downloading PPT:", error);
       setIsDownloading(false)
     } finally {

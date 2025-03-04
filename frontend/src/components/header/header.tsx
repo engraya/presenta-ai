@@ -31,7 +31,7 @@ const Header = () => {
           {/* Logo */}
           <Link href="/" className={cn('text-2xl font-bold')}>
             <h1
-              className="bg-gradient-to-r from-teal-800 via-sky-400 to-cyan-300 bg-clip-text text-2xl lg:text-4xl font-extrabold text-transparent">
+              className="bg-gradient-to-r from-green-400 to-purple-500 bg-clip-text text-2xl lg:text-4xl font-extrabold text-transparent">
                 Presenta-AI
             </h1>
           </Link>
